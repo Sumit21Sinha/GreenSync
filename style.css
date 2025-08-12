@@ -1,0 +1,269 @@
+body {
+    font-family: 'Nunito', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    color: #213b2e;
+    text-align: center;
+    background: linear-gradient(120deg, #f0fff8 10%, #e9f5e9 70%, #43ea7f 100%);
+    background-size: 200% 200%;
+    animation: gradientMove 12s ease-in-out infinite;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.floating-leaf {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: url('https://svgshare.com/i/roof.svg') no-repeat center/contain;
+    opacity: 0.13;
+    z-index: 0;
+    animation: leafFloat 8s infinite alternate ease-in-out;
+}
+.leaf1 { top: 12%; left: 7%; animation-delay: 0.5s; transform: rotate(22deg);}
+.leaf2 { top: 73%; left: 82%; animation-delay: 2.3s; transform: rotate(-8deg);}
+.leaf3 { top: 35%; left: 62%; animation-delay: 4.7s; transform: rotate(28deg);}
+@keyframes leafFloat {
+    from { transform: translateY(0) scale(1) rotate(0deg);}
+    to   { transform: translateY(-36px) scale(1.07) rotate(15deg);}
+}
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+header {
+    background: linear-gradient(90deg, #43ea7f 55%, #2e7d32 90%);
+    padding: 28px 0 36px 0;
+    border-bottom-left-radius: 60px 20px;
+    border-bottom-right-radius: 60px 20px;
+    box-shadow: 0 4px 24px rgba(44, 142, 72, 0.12);
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+.logo {
+    width: 90px;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(44,142,72,0.10);
+}
+h1 {
+    font-weight: 700;
+    font-size: 2.7em;
+    color: #0d3b09;
+    margin: 0;
+}
+h3 {
+    font-weight: 600;
+    font-size: 1.25em;
+    color: #218c3b;
+    margin: 0;
+    padding-left: 8px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    background: #2e7d32;
+    padding: 15px 0 16px 0;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.17);
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 38px;
+}
+.nav-link {
+    color: #e9fce9;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.17em;
+    transition: color 0.3s, letter-spacing 0.3s;
+}
+.nav-link:hover {
+    color: #43ea7f;
+    letter-spacing: 1px;
+}
+
+/* About Section (animation for fade-in toggle) */
+.about-section {
+    background: #f6fff6;
+    border-radius: 24px;
+    box-shadow: 0 2px 16px rgba(67, 234, 127, 0.14);
+    padding: 36px 18px 28px 18px;
+    margin: 38px auto 40px auto;
+    width: 90%;
+    max-width: 650px;
+    z-index: 2;
+    transition: opacity 0.6s, box-shadow 0.3s, transform 0.3s;
+}
+.about-section:empty {
+    display: none;
+}
+.about-section h2 {
+    font-family: 'Nunito', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    color: #218c3b;
+    margin-bottom: 16px;
+}
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.about-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(44,142,72,0.08);
+}
+.about-content p {
+    font-size: 1.13em;
+    color: #296049;
+    line-height: 1.7;
+    text-align: left;
+    max-width: 440px;
+    margin: 0;
+}
+@media (max-width:600px) {
+    .about-content {
+        flex-direction: column;
+        gap: 14px;
+    }
+    .about-content p { text-align: center; }
+}
+
+/* Data Section */
+.data-section {
+    margin: 0 auto 40px auto;
+    padding: 28px;
+    border-radius: 20px;
+    background: #ffffffc7;
+    box-shadow: 0 4px 24px rgba(44,72,52,0.09);
+    width: 90%;
+    max-width: 700px;
+    transition: box-shadow 0.3s;
+    z-index: 1;
+}
+.data-section:hover {
+    box-shadow: 0 8px 32px rgba(44,142,72,0.13);
+}
+
+.metric-card {
+    display: inline-block;
+    margin: 12px 30px;
+    padding: 20px 32px;
+    background: #f3f9f4;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(115,175,134,0.11);
+    text-align: center;
+    transition: transform 0.32s, box-shadow 0.3s;
+    opacity: 0;
+}
+.metric-card:hover {
+    box-shadow: 0 6px 28px rgba(67,234,127,0.15);
+    transform: translateY(-4px) scale(1.055);
+}
+.metric-icon {
+    font-size: 1.8em;
+    color: #43ea7f;
+    margin-bottom: 8px;
+}
+.metric-title {
+    font-weight: 600;
+    font-size: 1.08em;
+    margin-bottom: 7px;
+}
+.metric-value {
+    font-weight: 700;
+    font-size: 1.6em;
+    color: #218c3b;
+}
+
+.dashboard {
+    margin: 18px auto 35px auto;
+    width: 90%;
+    max-width: 650px;
+    padding: 22px 10px;
+    background: #fff;
+    border-radius: 19px;
+    box-shadow: 0 4px 32px rgba(44, 142, 72, 0.12);
+    z-index: 1;
+}
+
+.contact-section {
+    background: #eff8f0;
+    max-width: 480px;
+    margin: 42px auto 65px auto;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(44,72,52,0.14);
+    font-family: 'Quicksand', Arial, sans-serif;
+    color: #2e7d32;
+    transition: box-shadow 0.3s, transform 0.3s;
+    opacity: 0;
+}
+.contact-section:hover {
+    box-shadow: 0 8px 36px rgba(44,142,72,0.20);
+    transform: scale(1.025);
+}
+.contact-section h2 {
+    font-weight: 700;
+    font-size: 1.7em;
+    margin-bottom: 22px;
+    text-align: center;
+}
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1.8px solid #43ea7f;
+    outline: none;
+    font-size: 1em;
+    font-family: 'Nunito', Arial, sans-serif;
+    resize: none;
+    transition: border-color 0.32s;
+}
+.contact-section input:focus,
+.contact-section textarea:focus {
+    border-color: #218c3b;
+}
+.contact-section button {
+    background: #43ea7f;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 0;
+    font-size: 1.13em;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(67,234,127,0.28);
+    transition: background-color 0.3s;
+}
+.contact-section button:hover {
+    background-color: #218c3b;
+}
+
+footer {
+    background: #1b5e20;
+    color: white;
+    padding: 12px 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-size: 0.98em;
+    margin-top: 44px;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px);}
+    to   { opacity: 1; transform: translateY(0);}
+}

@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenSync</title>
+    <title>GreenSync – Smart Self-Watering Plant System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    
+   
+    <div class="floating-leaf leaf1"></div>
+    <div class="floating-leaf leaf2"></div>
+    <div class="floating-leaf leaf3"></div>
+
+    <header>
+        <div class="header-container">
+            <img src="logo.jpg" alt="GreenSync Logo" class="logo">
+            <div>
+                <h1>GreenSync</h1>
+                <h3>Smart Self-Watering Plant System</h3>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <a href="#dashboard" class="nav-link" id="dashboard-link">Dashboard</a>
+        <a href="#about" class="nav-link" id="about-link">About Us</a>
+        <a href="#contact" class="nav-link" id="contact-link">Contact Us</a>
+    </nav>
+
+ 
+    <section class="about-section" id="about-section" style="display:none;">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <img src="logo.jpg" alt="GreenSync Logo" class="about-logo">
+            <p>
+                <strong>At GreenSync</strong>, we believe that caring for plants should be easy, smart, and sustainable.<br><br>
+                Our mission is to combine technology with nature, making plant care effortless for everyone — from busy professionals to passionate gardeners.<br><br>
+                We’ve developed a smart self-watering plant system that uses advanced sensors and automation to monitor your plant’s environment and provide water only when it’s needed. With real-time data available on our web dashboard, you can check your plant’s health anytime, anywhere.<br><br>
+                Our system doesn’t just water plants — it saves water, prevents overwatering, and ensures your plants stay healthy, even when you’re away.<br><br>
+                Driven by innovation and a love for green living, GreenSync is here to help you grow healthier plants with less effort and more confidence.<br><br>
+                <strong>GreenSync – Where Technology Meets Nature. 🌱</strong>
+            </p>
+        </div>
+    </section>
+
+    <section class="data-section" id="dashboard-section">
+        <div class="metric-card">
+            <div class="metric-icon">&#127777;</div>
+            <div class="metric-title">Temperature</div>
+            <div class="metric-value" id="temp">24°C</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon">&#128166;</div>
+            <div class="metric-title">Soil Moisture</div>
+            <div class="metric-value" id="moisture">48%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon">&#128167;</div>
+            <div class="metric-title">Humidity</div>
+            <div class="metric-value" id="humidity">55%</div>
+        </div>
+    </section>
+
+    <section class="dashboard" id="chart-section">
+        <canvas id="sensorChart" width="400" height="180"></canvas>
+    </section>
+
+    <section class="contact-section" id="contact-section">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 GreenSync. All rights reserved.</p>
+    </footer>
+    <script src="main.js"></script>
 </body>
 </html>
