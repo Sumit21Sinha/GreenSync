@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-   
+    <!-- Animated floating leaves -->
     <div class="floating-leaf leaf1"></div>
     <div class="floating-leaf leaf2"></div>
     <div class="floating-leaf leaf3"></div>
@@ -27,9 +27,11 @@
         <a href="#dashboard" class="nav-link" id="dashboard-link">Dashboard</a>
         <a href="#about" class="nav-link" id="about-link">About Us</a>
         <a href="#contact" class="nav-link" id="contact-link">Contact Us</a>
+        <a href="login.html" class="nav-link">Login</a>
+        <a href="signup.html" class="nav-link">Sign Up</a>
     </nav>
 
- 
+    <!-- About Us section hidden by default -->
     <section class="about-section" id="about-section" style="display:none;">
         <h2>About Us</h2>
         <div class="about-content">
@@ -45,6 +47,7 @@
         </div>
     </section>
 
+    <!-- Dashboard Metrics -->
     <section class="data-section" id="dashboard-section">
         <div class="metric-card">
             <div class="metric-icon">&#127777;</div>
@@ -52,7 +55,14 @@
             <div class="metric-value" id="temp">24°C</div>
         </div>
         <div class="metric-card">
-            <div class="metric-icon">&#128166;</div>
+            <div class="metric-icon">
+                <!-- SVG for Soil Moisture -->
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 2C18 2 7 15 7 22C7 28.0751 12.9249 34 19 34C25.0751 34 31 28.0751 31 22C31 15 18 2 18 2Z" stroke="#43ea7f" stroke-width="2.5" fill="#e9f5e9"/>
+                  <ellipse cx="18" cy="23" rx="6" ry="7" fill="#43ea7f" stroke="#218c3b" stroke-width="1.5"/>
+                  <circle cx="18" cy="23" r="3" fill="#ffffff"/>
+                </svg>
+            </div>
             <div class="metric-title">Soil Moisture</div>
             <div class="metric-value" id="moisture">48%</div>
         </div>
