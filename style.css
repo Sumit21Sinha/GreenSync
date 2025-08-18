@@ -1,3 +1,4 @@
+/* 🌿 Global Body */
 body {
     font-family: 'Nunito', Arial, sans-serif;
     margin: 0;
@@ -11,6 +12,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Floating Leaves on Index Page */
 .floating-leaf {
     position: absolute;
     width: 60px;
@@ -33,6 +35,7 @@ body {
     100% {background-position: 0% 50%;}
 }
 
+/* 🌿 Header */
 header {
     background: linear-gradient(90deg, #43ea7f 55%, #2e7d32 90%);
     padding: 28px 0 36px 0;
@@ -65,6 +68,7 @@ h3 {
     padding-left: 8px;
 }
 
+/* 🌿 Navbar */
 .navbar {
     display: flex;
     justify-content: center;
@@ -87,7 +91,7 @@ h3 {
     letter-spacing: 1px;
 }
 
-/* About Section (animation for fade-in toggle) */
+/* 🌿 About Section */
 .about-section {
     background: #f6fff6;
     border-radius: 24px;
@@ -99,11 +103,7 @@ h3 {
     z-index: 2;
     transition: opacity 0.6s, box-shadow 0.3s, transform 0.3s;
 }
-.about-section:empty {
-    display: none;
-}
 .about-section h2 {
-    font-family: 'Nunito', Arial, sans-serif;
     font-weight: 700;
     font-size: 2em;
     color: #218c3b;
@@ -131,14 +131,11 @@ h3 {
     margin: 0;
 }
 @media (max-width:600px) {
-    .about-content {
-        flex-direction: column;
-        gap: 14px;
-    }
+    .about-content { flex-direction: column; gap: 14px; }
     .about-content p { text-align: center; }
 }
 
-/* Data Section */
+/* 🌿 Dashboard Metrics */
 .data-section {
     margin: 0 auto 40px auto;
     padding: 28px;
@@ -147,12 +144,8 @@ h3 {
     box-shadow: 0 4px 24px rgba(44,72,52,0.09);
     width: 90%;
     max-width: 700px;
-    transition: box-shadow 0.3s;
-    z-index: 1;
 }
-.data-section:hover {
-    box-shadow: 0 8px 32px rgba(44,142,72,0.13);
-}
+.data-section:hover { box-shadow: 0 8px 32px rgba(44,142,72,0.13); }
 
 .metric-card {
     display: inline-block;
@@ -173,18 +166,14 @@ h3 {
     font-size: 1.8em;
     color: #43ea7f;
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.metric-title {
-    font-weight: 600;
-    font-size: 1.08em;
-    margin-bottom: 7px;
-}
-.metric-value {
-    font-weight: 700;
-    font-size: 1.6em;
-    color: #218c3b;
-}
+.metric-title { font-weight: 600; font-size: 1.08em; margin-bottom: 7px; }
+.metric-value { font-weight: 700; font-size: 1.6em; color: #218c3b; }
 
+/* 🌿 Chart Section */
 .dashboard {
     margin: 18px auto 35px auto;
     width: 90%;
@@ -196,6 +185,7 @@ h3 {
     z-index: 1;
 }
 
+/* 🌿 Contact Section */
 .contact-section {
     background: #eff8f0;
     max-width: 480px;
@@ -216,7 +206,6 @@ h3 {
     font-weight: 700;
     font-size: 1.7em;
     margin-bottom: 22px;
-    text-align: center;
 }
 .contact-section input,
 .contact-section textarea {
@@ -227,9 +216,7 @@ h3 {
     border: 1.8px solid #43ea7f;
     outline: none;
     font-size: 1em;
-    font-family: 'Nunito', Arial, sans-serif;
     resize: none;
-    transition: border-color 0.32s;
 }
 .contact-section input:focus,
 .contact-section textarea:focus {
@@ -247,10 +234,9 @@ h3 {
     box-shadow: 0 4px 15px rgba(67,234,127,0.28);
     transition: background-color 0.3s;
 }
-.contact-section button:hover {
-    background-color: #218c3b;
-}
+.contact-section button:hover { background-color: #218c3b; }
 
+/* 🌿 Footer */
 footer {
     background: #1b5e20;
     color: white;
@@ -260,10 +246,126 @@ footer {
     font-size: 0.98em;
     margin-top: 44px;
     letter-spacing: 0.5px;
-    text-align: center;
 }
 
+/* 🌿 Animations */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(32px);}
     to   { opacity: 1; transform: translateY(0);}
 }
+
+/* ========================================================= */
+/* 🌿 AUTH PAGES (Login & Signup) */
+/* ========================================================= */
+.auth-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #3cb371, #2e8b57);
+  overflow: hidden;
+}
+
+/* Floating circles for Auth pages */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  animation: float 8s infinite ease-in-out;
+}
+.circle.small { width: 100px; height: 100px; top: 20%; left: 15%; }
+.circle.medium { width: 160px; height: 160px; bottom: 15%; right: 20%; }
+.circle.large { width: 220px; height: 220px; top: 60%; left: 65%; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+}
+
+/* Auth container box */
+.auth-container {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  width: 380px;
+  text-align: center;
+  z-index: 10;
+  animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-container h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: #2e8b57;
+}
+.auth-container p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background: #f9fdf9;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+.auth-container input:focus {
+  border-color: #2e8b57;
+  box-shadow: 0 0 8px rgba(46, 139, 87, 0.3);
+}
+
+/* Password visibility */
+.password-container { position: relative; }
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 14px;
+  color: #2e8b57;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #3cb371, #2e8b57);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(60, 179, 113, 0.4);
+}
+.btn:hover {
+  background: linear-gradient(135deg, #2e8b57, #256d46);
+  box-shadow: 0 6px 16px rgba(46, 139, 87, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Extra links */
+.extra {
+  margin-top: 15px;
+  font-size: 14px;
+}
+.extra a {
+  color: #2e8b57;
+  text-decoration: none;
+  font-weight: bold;
+}
+.extra a:hover { text-decoration: underline; }
